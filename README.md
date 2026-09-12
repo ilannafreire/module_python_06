@@ -185,10 +185,14 @@ The project follows these rules:
 - Python 3.10 or later
 - type annotations on functions
 - `flake8`-compatible formatting
-- `mypy`-compatible typing
+- type checking with `mypy`, with the intentional error in `ft_alembic_4.py`
 - no `eval()` or `exec()`
 - no modification of `sys.path`
 - imports only from modules created for this project
+
+`flake8 .` should finish without messages. Running `mypy .` reports one
+intentional error because `ft_alembic_4.py` accesses `alchemy.create_earth()`,
+which is deliberately not exposed by `alchemy/__init__.py`.
 
 ---
 
